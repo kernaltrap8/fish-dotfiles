@@ -1,34 +1,34 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export LS_COLORS:di\x3d38\x3b5\x3b141\x3aex\x3d38\x3b5\x3b129\x3aln\x3d38\x3b5\x3b135\x3api\x3d38\x3b5\x3b177\x3aso\x3d38\x3b5\x3b177\x3abd\x3d38\x3b5\x3b177\x3acd\x3d38\x3b5\x3b177\x3aor\x3d38\x3b5\x3b196\x3ami\x3d38\x3b5\x3b196\x3asu\x3d38\x3b5\x3b129\x3asg\x3d38\x3b5\x3b129\x3atw\x3d38\x3b5\x3b141\x3aow\x3d38\x3b5\x3b141\x3ast\x3d38\x3b5\x3b141
+SETUVAR --export LS_COLORS:
 SETUVAR __fish_initialized:3800
-SETUVAR fish_color_autosuggestion:\x234B1F6D
+SETUVAR fish_color_autosuggestion:\x237C3AED
 SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:\x238A2BE2
-SETUVAR fish_color_comment:\x235E2AA8
-SETUVAR fish_color_cwd:\x23A065F9
-SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:\x238A2BE2
-SETUVAR fish_color_error:brred
-SETUVAR fish_color_escape:brcyan
+SETUVAR fish_color_command:\x2322D3EE
+SETUVAR fish_color_comment:\x239333EA
+SETUVAR fish_color_cwd:\x238B5CF6
+SETUVAR fish_color_cwd_root:\x23FBBF24
+SETUVAR fish_color_end:\x23A78BFA
+SETUVAR fish_color_error:\x23F87171
+SETUVAR fish_color_escape:\x2322D3EE
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
-SETUVAR fish_color_host_remote:\x238A2BE2
-SETUVAR fish_color_normal:normal
-SETUVAR fish_color_operator:\x238A2BE2
-SETUVAR fish_color_param:\x23A065F9
-SETUVAR fish_color_quote:\x23B084FF
-SETUVAR fish_color_redirection:\x23B084FF\x1e\x2d\x2dbold
-SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3d\x234B1F6D
-SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3d\x235E2AA8
-SETUVAR fish_color_status:red
-SETUVAR fish_color_user:\x23B084FF
+SETUVAR fish_color_host_remote:\x23A855F7
+SETUVAR fish_color_normal:\x23E6D5FF
+SETUVAR fish_color_operator:\x23C084FC
+SETUVAR fish_color_param:\x23DDD6FE
+SETUVAR fish_color_quote:\x23EC4899
+SETUVAR fish_color_redirection:\x23A78BFA\x1e\x2d\x2dbold
+SETUVAR fish_color_search_match:\x23E6D5FF\x1e\x2d\x2dbackground\x3d\x237C3AED
+SETUVAR fish_color_selection:\x23E6D5FF\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3d\x239333EA
+SETUVAR fish_color_status:\x23F87171
+SETUVAR fish_color_user:\x23C4B5FD
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_key_bindings:fish_default_key_bindings
-SETUVAR fish_pager_color_completion:normal
-SETUVAR fish_pager_color_description:\x23B084FF\x1e\x23A065F9\x1e\x2di
-SETUVAR fish_pager_color_prefix:\x238A2BE2\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
-SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3d\x235E2AA8
+SETUVAR fish_pager_color_completion:\x23E6D5FF
+SETUVAR fish_pager_color_description:\x23A78BFA\x1e\x23C4B5FD\x1e\x2di
+SETUVAR fish_pager_color_prefix:\x238B5CF6\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:\x23DDD6FE\x1e\x2d\x2dbackground\x3d\x239333EA
 SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/home/charlotte/\x2elocal/bin
 SETUVAR --export nogreet:hi

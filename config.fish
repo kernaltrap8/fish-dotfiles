@@ -5,7 +5,7 @@ if status is-interactive
 end
 
 set -gx COLORTERM truecolor
-set -gx LS_COLORS "di=38;5;141:ex=38;5;129:ln=38;5;135:pi=38;5;177:so=38;5;177:bd=38;5;177:cd=38;5;177:or=38;5;196:mi=38;5;196:su=38;5;129:sg=38;5;129:tw=38;5;141:ow=38;5;141:st=38;5;141"
+#set -gx LS_COLORS "di=38;5;141:ex=38;5;129:ln=38;5;135:pi=38;5;177:so=38;5;177:bd=38;5;177:cd=38;5;177:or=38;5;196:mi=38;5;196:su=38;5;129:sg=38;5;129:tw=38;5;141:ow=38;5;141:st=38;5;141"
 
 #if ! pgrep -x wmaker >/dev/null 
 bash $HOME/scripts/start-wayfire.sh
@@ -30,7 +30,7 @@ alias randr-set="wlr-randr --output HDMI-A-1 --preferred --mode 1920x1080@74.986
 alias novnc-ngrok="novnc &; ngrok tcp 6080"
 alias sober="flatpak run org.vinegarhq.Sober"
 alias screensaver-settings="GDK_BACKEND=x11 xscreensaver-settings"
-alias ls="lsd"
+alias ls="eza --icons=always"
 #alias grep="grep -RniI --color=auto --exclude-dir=.git" # R = recursive
 # n = show line numbers
 # i = case-insensitive
