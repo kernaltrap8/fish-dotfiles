@@ -5,6 +5,7 @@ if status is-interactive
 end
 
 set -gx COLORTERM truecolor
+set -gx WINEPREFIX $HOME/.wine
 #set -gx LS_COLORS "di=38;5;141:ex=38;5;129:ln=38;5;135:pi=38;5;177:so=38;5;177:bd=38;5;177:cd=38;5;177:or=38;5;196:mi=38;5;196:su=38;5;129:sg=38;5;129:tw=38;5;141:ow=38;5;141:st=38;5;141"
 set LS_COLORS ""
 #if ! pgrep -x wmaker >/dev/null 
@@ -31,6 +32,8 @@ alias novnc-ngrok="novnc &; ngrok tcp 6080"
 alias sober="flatpak run org.vinegarhq.Sober"
 alias screensaver-settings="GDK_BACKEND=x11 xscreensaver-settings"
 alias ls="eza --icons=always"
+alias clang="clang -std=c99"
+#alias helium="helium --enable-features=VaapiVideoDecoder,VaapiVideoEncoder,UseOzonePlatform --ozone-platform=wayland --use-gl=angle --use-angle=vulkan --ignore-gpu-blocklist --force-refresh-rate=100"
 #alias grep="grep -RniI --color=auto --exclude-dir=.git" # R = recursive
 # n = show line numbers
 # i = case-insensitive
@@ -170,8 +173,11 @@ function to_upper
 end
 
 function luks-mount
+    if not test $argv
+        echo "please give /dev mountpoint"
+    end
     if not test -e /dev/mapper/gpg
-        sudo cryptsetup open /dev/sdd1 gpg
+        sudo cryptsetup open "/dev/$argv" gpg
     end
     sudo mkdir -p /mnt/gpg
     sudo mount /dev/mapper/gpg /mnt/gpg
@@ -193,4 +199,8 @@ function luks-unmount
     else
         printf "%s %s %s\n" "ERROR: "(status current-function)": /dev/mapper/gpg still exists. Cannot continue."
     end
+end
+
+function protontricks
+    flatpak run com.github.Matoking.protontricks $argv
 end
