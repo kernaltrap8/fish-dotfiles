@@ -30,5 +30,5 @@ SETUVAR fish_pager_color_description:\x23A78BFA\x1e\x23C4B5FD\x1e\x2di
 SETUVAR fish_pager_color_prefix:\x238B5CF6\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:\x23DDD6FE\x1e\x2d\x2dbackground\x3d\x239333EA
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/charlotte/git/honeycomb/Honeycomb\x2dCLI/bin/Debug/net8\x2e0\x1e/home/charlotte/appimages\x1e/home/charlotte/\x2edotnet/tools\x1e/opt/freerdp\x2dnightly/bin\x1e/home/charlotte/\x2elocal/bin
+SETUVAR fish_user_paths:/home/charlotte/bin\x1e/home/charlotte/git/honeycomb/Honeycomb\x2dCLI/bin/Debug/net8\x2e0\x1e/home/charlotte/appimages\x1e/home/charlotte/\x2edotnet/tools\x1e/opt/freerdp\x2dnightly/bin\x1e/home/charlotte/\x2elocal/bin
 SETUVAR --export nogreet:hi

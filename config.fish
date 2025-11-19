@@ -204,3 +204,12 @@ end
 function protontricks
     flatpak run com.github.Matoking.protontricks $argv
 end
+
+function linux_to_wine
+    # Expand ~ and clean the path
+    set -l p (realpath -m $argv[1])
+
+    # Convert /home/user/foo -> Z:\home\user\foo
+    set p (string replace -a "/" "\\" $p)
+    echo "Z:$p"
+end
