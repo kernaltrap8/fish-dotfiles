@@ -8,9 +8,9 @@ set -gx COLORTERM truecolor
 set -gx WINEPREFIX $HOME/.wine
 #set -gx LS_COLORS "di=38;5;141:ex=38;5;129:ln=38;5;135:pi=38;5;177:so=38;5;177:bd=38;5;177:cd=38;5;177:or=38;5;196:mi=38;5;196:su=38;5;129:sg=38;5;129:tw=38;5;141:ow=38;5;141:st=38;5;141"
 set LS_COLORS ""
-#if ! pgrep -x wmaker >/dev/null 
-bash $HOME/scripts/start-wayfire.sh
-#end
+if ! pgrep -x sway >/dev/null
+    sway
+end
 export GTK_THEME=Adwaita:dark
 export DOTNET_ROOT=$HOME/.dotnet/
 export PATH="$DOTNET_ROOT:$PATH"
