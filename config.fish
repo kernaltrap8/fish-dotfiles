@@ -8,10 +8,18 @@ set -gx COLORTERM truecolor
 set -gx WINEPREFIX $HOME/.wine
 #set -gx LS_COLORS "di=38;5;141:ex=38;5;129:ln=38;5;135:pi=38;5;177:so=38;5;177:bd=38;5;177:cd=38;5;177:or=38;5;196:mi=38;5;196:su=38;5;129:sg=38;5;129:tw=38;5;141:ow=38;5;141:st=38;5;141"
 set LS_COLORS ""
-if ! pgrep -x sway >/dev/null
-    sway
-end
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=sway
+dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 export GTK_THEME=Adwaita:dark
+export GTK_APPLICATION_PREFER_DARK=1
+export vblank_mode=1
+if ! pgrep -x sway >/dev/null
+    dbus-run-session sway
+end
 export DOTNET_ROOT=$HOME/.dotnet/
 export PATH="$DOTNET_ROOT:$PATH"
 export DOTNET_PACKAGES=/opt/dotnet-nugets/
@@ -177,10 +185,10 @@ function luks-mount
         echo "please give /dev mountpoint"
     end
     if not test -e /dev/mapper/gpg
-        sudo cryptsetup open "/dev/$argv" gpg
+        doas cryptsetup open "/dev/$argv" gpg
     end
-    sudo mkdir -p /mnt/gpg
-    sudo mount /dev/mapper/gpg /mnt/gpg
+    doas mkdir -p /mnt/gpg
+    doas mount /dev/mapper/gpg /mnt/gpg
 end
 
 function luks-unmount
@@ -192,10 +200,10 @@ function luks-unmount
         return 1
     end
 
-    sudo umount /mnt/gpg
+    doas umount /mnt/gpg
 
     if test -e /dev/mapper/gpg
-        sudo cryptsetup close gpg
+        doas cryptsetup close gpg
     else
         printf "%s %s %s\n" "ERROR: "(status current-function)": /dev/mapper/gpg still exists. Cannot continue."
     end
