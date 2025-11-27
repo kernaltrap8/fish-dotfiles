@@ -4,6 +4,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+source /etc/profile.env # needed for eselect managed packages
+
 set -gx COLORTERM truecolor
 set -gx WINEPREFIX $HOME/.wine
 #set -gx LS_COLORS "di=38;5;141:ex=38;5;129:ln=38;5;135:pi=38;5;177:so=38;5;177:bd=38;5;177:cd=38;5;177:or=38;5;196:mi=38;5;196:su=38;5;129:sg=38;5;129:tw=38;5;141:ow=38;5;141:st=38;5;141"
@@ -11,14 +13,13 @@ set LS_COLORS ""
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=sway
-dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_QPA_PLATFORMTHEME=qt6ct
 export GTK_THEME=Adwaita:dark
 export GTK_APPLICATION_PREFER_DARK=1
 export vblank_mode=1
 if ! pgrep -x sway >/dev/null
-    dbus-run-session sway
+    dbus-run-session sway & disown
 end
 export DOTNET_ROOT=$HOME/.dotnet/
 export PATH="$DOTNET_ROOT:$PATH"
